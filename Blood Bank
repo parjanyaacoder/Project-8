@@ -1,0 +1,86 @@
+import java.util.*;
+class blood
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter no. of people");
+        int n=sc.nextInt();
+        
+        String ar3[]={"A+","B+","AB+","O+"};
+        int arr[]=new int[4];
+        for(int i=0;i<4;i++)
+        {
+            arr[i]=25;
+        }
+        int j,k,l=0,m=0,p,b;
+       
+        
+        for(j=1;j<=n;j++)
+        {            
+            System.out.println("Enter 1 to donate blood and 2 to take blood");
+            k=sc.nextInt();
+                  
+                System.out.println("Enter blood type 1 for A+,2 for B+,3 for AB+,4 for O+");
+                 p=sc.nextInt();
+                 System.out.println("Numbers of bottles of blood");
+                 b=sc.nextInt();
+                 
+                if(k==1)
+                {
+                switch (p)
+                {
+                    case 1:
+                     arr[0]=arr[0]+b;
+                      System.out.println("Blood donated  of type "+ar3[0]+" "+ b + " bottles");
+                       break;
+                       case 2:
+                       arr[1]=arr[0]+b;
+                        System.out.println("Blood donated of type "+ar3[1]+" "+ b + " bottles");
+                       break;
+                        case 3:
+                         arr[2]=arr[0]+b;
+                          System.out.println("Blood donated of type "+ar3[2]+" "+ b + " bottles");
+                         break;
+                         case 4:
+                          arr[3]=arr[0]+b;
+                           System.out.println("Blood donated of type "+ar3[3]+" "+ b + " bottles");
+                          break;
+                        }
+                        
+                    }
+                    else if(k==2)
+                    { 
+                        if(arr[p-1]==0)
+                        System.out.println("We cannot give you this type of blood");
+                        switch (p)
+                {
+                    case 1:
+                     arr[0]=arr[0]-b;
+                      System.out.println("Blood taken  of type "+ar3[0]+" "+ b + " bottles");
+                         break;
+                       case 2: 
+                       arr[1]=arr[0]-b;
+                        System.out.println("Blood taken  of type "+ar3[1]+" "+ b + " bottles");
+                       break;
+                        case 3:
+                         arr[2]=arr[0]-b;
+                          System.out.println("Blood taken of type "+ar3[2]+" "+ b + " bottles");
+                         break;
+                         case 4:
+                          arr[3]=arr[0]-b;
+                           System.out.println("Blood taken of type "+ar3[3]+" "+ b + " bottles");
+                          break;
+                        }
+                       
+                       
+                    }
+                    else {
+                    System.out.println("Enter a valid number either 1 or 2");
+                    continue;}
+                }
+            }
+        }
+                    
+            
+        
